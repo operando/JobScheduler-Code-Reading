@@ -465,6 +465,8 @@ public synchronized boolean isReady() {
 ## adb shell dumpsys jobscheduler
 
 * サンプル
+* JobSchedulerに登録されているJobをDumpする
+ * JobSchedulerの状態を見る時にめっちゃ使う
 * TODO : Dumpされる情報を細かく調べる。意味とか
 
 ```java
