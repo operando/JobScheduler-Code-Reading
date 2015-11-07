@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<job-info version="0">
+    <job jobid="800" package="android" class="com.android.server.pm.BackgroundDexOptService" uid="1000">
+        <constraints idle="true" charging="true" />
+        <one-off delay="1446847721372" />
+        <extras />
+    </job>
+    <job jobid="808" package="android" class="com.android.server.MountServiceIdler" uid="1000">
+        <constraints idle="true" charging="true" />
+        <one-off delay="1446883201683" />
+        <extras />
+    </job>
+    <job jobid="1" package="com.android.providers.downloads" class="com.android.providers.downloads.DownloadIdleService" uid="10006">
+        <constraints idle="true" charging="true" />
+        <periodic period="86400000" deadline="1446913897467" delay="1446847721311" />
+        <extras />
+    </job>
+    <job jobid="0" package="com.os.operando.jobschedulersample" class="com.os.operando.jobschedulersample.services.MyJobService" uid="10062">
+        <constraints connectivity="true" idle="true" />
+        <one-off />
+        <extras>
+            <int name="id" value="0" />
+            <string name="test">value0</string>
+        </extras>
+    </job>
+    <job jobid="20536" package="android" class="com.android.server.backup.FullBackupJob" uid="1000">
+        <constraints unmetered="true" idle="true" charging="true" />
+        <one-off />
+        <extras />
+    </job>
+    <job jobid="1" package="com.os.operando.jobschedulersample" class="com.os.operando.jobschedulersample.services.MyJobService" uid="10062">
+        <constraints connectivity="true" idle="true" />
+        <one-off />
+        <extras>
+            <int name="id" value="1" />
+            <string name="test">value1</string>
+        </extras>
+    </job>
+    <job jobid="20537" package="android" class="com.android.server.backup.KeyValueBackupJob" uid="1000">
+        <constraints connectivity="true" charging="true" />
+        <one-off deadline="1446934123174" delay="1446862271078" />
+        <extras />
+    </job>
+</job-info>
