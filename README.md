@@ -1,8 +1,8 @@
 # JobScheduler Code Reading
 
-**Android M 7.0.0_r1.0のソースコードをベースに調べたもの**
+**Android M 7.1.1_r1.0のソースコードをベースに調べたもの**
 
-http://tools.oesf.biz/android-7.0.0_r1.0/
+http://tools.oesf.biz/android-7.1.1_r1.0/
 
 # Project Volta
 
@@ -51,7 +51,7 @@ http://tools.oesf.biz/android-7.0.0_r1.0/
  * https://github.com/operando/JobScheduler-Code-Reading#ramサイズによって同時実行できるjobの数が変わる
 * 最大で16こ Jobが同時に実行できるようになってるのかな？
 
-http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#106
+http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#106
 
 ```java
 /** The maximum number of concurrent jobs we run at one time. */
@@ -64,15 +64,15 @@ private static final int MAX_JOB_CONTEXTS_COUNT = 16;
 * これややこしいなー
 * なんかSettingを値を読み込んで処理するところがあるんだけどー
  * 読み込んでる値が`ALARM_MANAGER_CONSTANTS = "alarm_manager_constants"` ってやつなんだよね
- * http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#302
+ * http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#302
  * `ALARM_MANAGER_CONSTANTS`
- * http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#ALARM_MANAGER_CONSTANTS
+ * http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#ALARM_MANAGER_CONSTANTS
 * JobSchedulerService#startメソッドでContentResolverを作ってる
- * http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#287
+ * http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#287
 *
-* http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#8056
+* http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#8056
 * Settings.Global.getStringの処理
- * http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#8650
+ * http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#8650
 
 
 ## Let's go!とGO GO GO!は健在
@@ -81,20 +81,20 @@ Android Mのコードにもあった面白コメント
 
 ### Let's go!
 
-* http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#773
+* http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#773
 
 
 ### GO GO GO!
 
-* http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#795
+* http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#795
 
 
 ## 雑メモ
 
 * なんかまた内部向け独自パーサー見つけた
- * http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/core/java/android/util/KeyValueListParser.java
+ * http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/core/java/android/util/KeyValueListParser.java
  * Settingの値とかをパースするのに使われてるっぽい。以下とか。
- * http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#ALARM_MANAGER_CONSTANTS
+ * http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/core/java/android/provider/Settings.java#ALARM_MANAGER_CONSTANTS
 
 
-* http://tools.oesf.biz/android-7.0.0_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#
+* http://tools.oesf.biz/android-7.1.1_r1.0/xref/frameworks/base/services/core/java/com/android/server/job/JobSchedulerService.java#
