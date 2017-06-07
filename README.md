@@ -1,6 +1,6 @@
 # JobScheduler Code Reading
 
-**Android M 7.1.1_r1.0のソースコードをベースに調べたもの**
+**Android N 7.1.1_r1.0のソースコードをベースに調べたもの**
 
 http://tools.oesf.biz/android-7.1.1_r1.0/
 
